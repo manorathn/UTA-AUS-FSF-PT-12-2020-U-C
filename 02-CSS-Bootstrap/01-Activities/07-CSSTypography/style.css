@@ -1,0 +1,44 @@
+/* * Be sure to modify the following CSS properties for each paragraph of your page:
+
+  * font-family
+
+  * font-size
+
+  * font-weight
+
+  * line-height */
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
+  font-weight: bolder;
+  line-height: 15px;
+}
+
+h4 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: x-small;
+  font-weight: bolder;
+  line-height: 15px;
+}
+
+.P1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: xx-large;
+  font-weight: bolder;
+  line-height: 15px;
+}
+
+.P2 {
+  font-family: fantasy;
+  font-size: xx-small;
+  font-weight: bolder;
+  line-height: 15px;
+}
+
+.P3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+  font-weight: 500px;
+  line-height: 15px;
+}
