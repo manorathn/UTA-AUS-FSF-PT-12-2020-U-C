@@ -1,35 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en-us">
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>09 Activity</title>
-</head>
-<body>
+    <title>Steak Conditional Activity</title>
+  </head>
+  <body>
+
     <script type="text/javascript">
 
+      // Here we ask the user if they eat steak, and store the result (true/false) in a variable.
+      var eatSteak = confirm("Do you eat steak?");
 
-        var doYouEatSteak = confirm("Do you eat steak?");
-    
-        if (doYouEatSteak)  {
-            alert("Here is a steak sammy!");
-            else {
-            alert("Here is a tofu stir fry!");
-            }
-        }
+      // If the user eats steak (eatSteak === true) we run the following code block.
+      if (eatSteak) {
+        alert("Here's a steak");
+      }
+      // If the above condition isn't met (eatSteak !== true), run the following block of code instead.
+      else {
+        alert("Here's a tofu stir fry!");
+      }
 
-        var birthYear = prompt("What year were you born?");
-        var age = (2020 - birthYear);
+      // Bonus
+      // Here we ask the user what year they were born, and store their response to a variable.
+      var birthYear = prompt("What year were you born?");
 
-        if (age < 21) {
-            alert("No sake for you!");
-            else{
-            alert("Here is some sake!");
-            }
-
-        }
-
+      // If the user was born before 1997, alert "SAKE SAKE SAKE!"
+      if (birthYear < 1997) {
+        alert("SAKE SAKE SAKE!");
+      }
+      // Else if the user was born after 1997, alert "No Sake for you!"
+      else if (birthYear > 1997) {
+        alert("No Sake for you!");
+      }
+      // If neither of the previous conditions was true (birthYear === 1995) we alert "You inched by!"
+      else {
+        alert("You inched by! Sake Sake Sake!");
+      }
 
     </script>
-</body>
+
+  </body>
 </html>
