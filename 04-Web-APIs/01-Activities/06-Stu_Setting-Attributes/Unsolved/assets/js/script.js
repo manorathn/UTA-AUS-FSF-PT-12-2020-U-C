@@ -1,6 +1,7 @@
 var site1El = document.querySelector(".site1");
 var site2El = document.querySelector(".site2");
 var site3El = document.querySelector(".site3");
+var h4 = document.querySelectorAll("h4");
 
 site1El.children[0].textContent = "Site 1";
 site1El.children[1].setAttribute("href", "https://google.com");
@@ -21,3 +22,6 @@ site3El.children[1].children[0].setAttribute("alt", "women working");
 site3El.children[1].children[0].setAttribute("style", "padding:10px;");
 
 // Write Your Code Below
+for (var i = 0; i < h4.length; i++) {
+    h4[i].setAttribute("style", "color:blue; font-weight: bolder; font-size: 30px; padding-left: 10px; margin: 0; ");
+   }

@@ -16,6 +16,7 @@ function prepareRead() {
     timerEl.textContent = timeLeft + " seconds remaining";
     timeLeft--;
 
+
     if (timeLeft === 0) {
       timerEl.textContent = "";
       speedRead();
@@ -26,7 +27,7 @@ function prepareRead() {
 }
 
 function speedRead() {
-  //Add Your Code Here
+
 }
 
-prepareRead();
+prepareRead("poem");
