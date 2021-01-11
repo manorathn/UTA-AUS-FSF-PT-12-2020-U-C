@@ -1,6 +1,6 @@
-// TODO: Which element is the following line of code selecting?
+// TODO: Which element is the following line of code selecting? carouselbox
 var carousel = document.querySelector(".carouselbox");
-// TODO: Which element is the following line of code selecting?
+// TODO: Which element is the following line of code selecting? next & prev
 var next = carousel.querySelector(".next");
 var prev = carousel.querySelector(".prev");
 var index = 0;
@@ -26,7 +26,8 @@ function navigate(direction) {
   carousel.style.backgroundImage = "url('" + currentImage + "')";
 }
 
-// TODO: Describe the functionality of the following event listener.
+// TODO: Describe the functionality of the following event listener. 
+
 carousel.addEventListener("click", function() {
   window.location.href = images[index];
 });

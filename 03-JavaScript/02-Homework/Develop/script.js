@@ -7,13 +7,6 @@ specialChar = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
 lowerAlpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 upperAlpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
-
-// var confirmLength = "";
-// // var confirmNum 
-// // var confirmSpecialChar 
-// // var confirmUpperCase 
-// // var confirmLowerCase 
-
 function generatePassword(){
 var confirmLength = "";
 
@@ -27,11 +20,11 @@ confirmLength = prompt('How many characters would you like your password to cont
   } 
 
   else{
-    alert('Your password will contain ' + (confirmLength) + ' characters!')
     var confirmNum = confirm("Will this contain numbers?");
     var confirmSpecialChar = confirm("Will this contain special characters?");
     var confirmUppercase = confirm("Will this contain Uppercase letters?");
     var confirmLowercase = confirm("Will this contain Lowercase letters?");
+    alert('Your password will contain ' + (confirmLength) + ' characters!')
   }
 
   var selection;
@@ -156,6 +149,7 @@ confirmLength = prompt('How many characters would you like your password to cont
     generatedPassword = generatedPassword + selection[Math.floor(Math.random() * selection.length)];
     console.log(generatedPassword)
   }
+
   return generatedPassword;
 
 };

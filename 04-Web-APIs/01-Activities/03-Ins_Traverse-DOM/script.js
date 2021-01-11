@@ -12,6 +12,10 @@ console.log(document.body.children[1].children[0]);
 
 // Accessing element by id
 var firstChildUl = document.getElementById("first-child-ul");
+var color = document.getElementById("color");
 
 // Setting style of element
+color.addEventListener("click", function(){
+    color.classList.toggle("red")
+})
 firstChildUl.style.color = "#e97451";
