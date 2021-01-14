@@ -11,7 +11,7 @@ var i = 0;
 var wordsPerMillisecond = prompt("How many words per millisecond would you like to read?");
 
 function prepareRead() {
-  var timeLeft = 5;
+  var timeLeft = 90;
 
   var timeInterval = setInterval(function() {
     timerEl.textContent = timeLeft + " seconds remaining";
