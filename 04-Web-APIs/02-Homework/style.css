@@ -57,8 +57,7 @@ section {
   margin: right;
 }
 
-#clock,
-#time {
+#clock {
   font-weight: bold;
   font-family: sans-serif;
   display: block;
@@ -67,9 +66,10 @@ section {
 }
 
 #time {
-  display: block;
   font-size: 10px;
+  color: rgb(0, 0, 0);
   text-align: center;
+  display: block;
 }
 article {
   font-family: 'Work Sans', sans-serif;

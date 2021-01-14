@@ -27,7 +27,14 @@
 
     // Using JavaScript programmatically append each drinkList item to the "drink-options" div
     // HINT: you will need a for loop to go over each element in the list
+    var drinkOptionsEl = $("#drink-options");
 
+    for (var i=0; i  < drinkList.length; i++){
+      var el = $('<div>');
+      console.log('drinkList[i]', drinkList[i]);
+        el.text(drinkList[i]);
+        drinkOptionsEl.append(el);
+    }
 
   </script>
 
