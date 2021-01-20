@@ -10,12 +10,11 @@ var i = 0;
 var millisecondsPerWord = prompt("How many milliseconds between words would you like?");
 
 function prepareRead() {
-  var timeLeft = 5;
+  var timeLeft = 90;
 
   var timeInterval = setInterval(function() {
     timerEl.textContent = timeLeft + " seconds remaining";
     timeLeft--;
-
 
     if (timeLeft === 0) {
       timerEl.textContent = "";
@@ -26,8 +25,19 @@ function prepareRead() {
   }, 1000);
 }
 
-function speedRead() {
 
+function speedRead() {
+  mainEl.append(bodyEl);
+
+  var poemInterval = setInterval(function() {
+    if (words[i] === undefined) {
+      clearInterval(poemInterval);
+    } else {
+      mainEl.textContent = words[i];
+      i++;
+    }
+
+  }, wordsPerMillisecond);
 }
 
-prepareRead("poem");
+prepareRead();

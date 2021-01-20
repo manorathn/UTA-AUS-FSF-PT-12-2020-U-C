@@ -13,15 +13,17 @@ var li2 = document.createElement("li");
 var li3 = document.createElement("li");
 var li4 = document.createElement("li");
 
+
+
 h1El.textContent = "Welcome to my page";
 kittenEl.textContent = "This is my kitten 🐱.";
 nameEl.textContent = "His name is Jax.";
 favoriteEl.textContent = "My favorite foods are:";
 
-li1.textContent = "pizza";
-li2.textContent = "noodles";
-li3.textContent = "rice";
-li4.textContent = "chicken";
+li1.textContent = "pizza 🍕";
+li2.textContent = "noodles 🍜";
+li3.textContent = "rice 🍚";
+li4.textContent = "chicken 🍗";
 
 body.appendChild(h1El);
 body.appendChild(infoEl);
@@ -42,6 +44,12 @@ infoEl.setAttribute("style", "margin:auto; width:50%; text-align:center;");
 imgEl.setAttribute("src", "http://placekitten.com/200/300");
 nameEl.setAttribute("style", "font-size:25px; text-align:center;");
 kittenEl.setAttribute("style", "font-size:25px; text-align:center;");
-favoriteEl.setAttribute("style", "font-size:20px;");
+favoriteEl.setAttribute("style", "font-size:20px");
 
+listEl.setAttribute("style", "background-color: #333333; padding: 20px")
+
+li1.setAttribute("style", "color: white; padding: 5px; margin-left: 35px; background-color: red")
+li2.setAttribute("style", "color: black; padding: 5px; margin-left: 35px; background-color: yellow")
+li3.setAttribute("style", "color: white; padding: 5px; margin-left: 35px; background-color: green")
+li4.setAttribute("style", "color: white; padding: 5px; margin-left: 35px; background-color: blue")
 // TODO: Add ordered list items containing four favorite foods

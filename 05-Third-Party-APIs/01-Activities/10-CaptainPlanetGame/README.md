@@ -13,3 +13,5 @@
   * Click to… Create fire or water (hint: images)!
 
 * Slack out a screenshot of the working example.
+
+*click to.. change color
