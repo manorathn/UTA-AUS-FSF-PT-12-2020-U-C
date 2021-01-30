@@ -25,7 +25,7 @@ var buttonClickHandler = function (event) {
   var language = event.target.getAttribute('data-language');
 
   // Why is this `if` block in place?
-  // TODO: Write your answer here
+  // TODO: buttons on line 42-43 gets info from data-language.
   if (language) {
     getFeaturedRepos(language);
 
@@ -55,7 +55,7 @@ var getUserRepos = function (user) {
 
 var getFeaturedRepos = function (language) {
   // What are the query parameters doing here?
-  // TODO: Write your answer here
+  // TODO: (Searching for "helped wanted" for selected language )
   var apiUrl = 'https://api.github.com/search/repositories?q=' + language + '+is:featured&sort=help-wanted-issues';
 
   fetch(apiUrl).then(function (response) {
@@ -73,7 +73,7 @@ var displayRepos = function (repos, searchTerm) {
   if (repos.length === 0) {
     repoContainerEl.textContent = 'No repositories found.';
     // What would happen if there was no `return;` here?
-    // TODO: Write your answer here
+    // TODO: if search for repos returns nothing then no repo is returned.
     return;
   }
 
