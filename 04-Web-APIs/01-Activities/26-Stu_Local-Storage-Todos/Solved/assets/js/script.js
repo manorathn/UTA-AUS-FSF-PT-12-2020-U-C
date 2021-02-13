@@ -20,7 +20,7 @@ function renderTodos() {
     li.setAttribute("data-index", i);
 
     var button = document.createElement("button");
-    button.textContent = "Complete ✔️";
+    button.textContent = "clear";
 
     li.appendChild(button);
     todoList.appendChild(li);
@@ -47,7 +47,7 @@ function storeTodos() {
 }
 
 // Add submit event to form
-todoForm.addEventListener("submit", function(event) {
+todoForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
   var todoText = todoInput.value.trim();
@@ -67,7 +67,7 @@ todoForm.addEventListener("submit", function(event) {
 });
 
 // Add click event to todoList element
-todoList.addEventListener("click", function(event) {
+todoList.addEventListener("click", function (event) {
   var element = event.target;
 
   // Checks if element is a button
