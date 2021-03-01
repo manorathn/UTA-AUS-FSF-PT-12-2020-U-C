@@ -1,5 +1,7 @@
 // TODO: Import `maths.js`
 
+const maths = require('./maths.js')
+
 // TODO: Capture the values passed from the command line into these three variables: `operation`, `numOne` and `numTwo`
 
 // TODO: Create a `switch` statement that accepts an `operation` parameter
