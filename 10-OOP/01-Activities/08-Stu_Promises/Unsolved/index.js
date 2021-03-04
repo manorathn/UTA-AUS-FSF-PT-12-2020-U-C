@@ -11,23 +11,48 @@ if (!userInput) {
 }
 
 // If the user enters anything other than the word 'coding', set 'studentDistracted' to 'true'
-const studentDistracted = userInput !== 'coding';
+// const studentDistracted = userInput !== 'coding';
+
+const studentDistracted = true;
 
 // TODO: Refactor the following to use promises
-const practiceCoding = (cb, errCb) => {
+const practiceCoding = new Error((resolve, reject) => {
   if (studentDistracted) {
-    errCb({
+    const errCb = {
       issue: 'Distracted',
       message: 'Coding stopped',
-    });
+    };
+    reject(errCb);
   } else {
-    cb('We are coding!');
+    const cb = new Promise('We are Coding');
+    resolve(cb);
   }
-};
+});
 
-const callback = (message) => console.log(message);
-const errorCallback = (message) => console.log(message);
+const woohoo = () => {
+  const message = 'We a'
+}
+
+
+
+
+// const practiceCoding = (cb, errCb) => {
+//   if (studentDistracted) {
+//     errCb({
+//       issue: 'Distracted',
+//       message: 'Coding stopped',
+//     });
+//   } else {
+//     cb('We are coding!');
+//   }
+// };
+
+// const callback = (message) => console.log(message);
+// const errorCallback = (message) => console.log(message);
 
 // TODO: Refactor to call 'practiceCoding()' and chain a 'then()' to log "We are coding in promises!" in the console
+practiceCoding
+  .then((message) => console.log(message))
+  .catch((error) => console.error(error));
 // TODO: Chain a 'catch()' to log "Promise rejected: " and the error
-practiceCoding(callback, errorCallback);
+// practiceCoding(callback, errorCallback);
