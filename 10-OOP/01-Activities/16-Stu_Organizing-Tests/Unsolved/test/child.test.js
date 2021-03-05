@@ -4,7 +4,8 @@ describe("Child", () => {
   // TODO: Add a comment describing the purpose of the following test suite
   describe("Initialization", () => {
     it("should create an object with a name and age if provided valid arguments", () => {
-      const child = new Child("Sarah", 3);
+      const child = new Child("", 3);
+      console.log(child);
 
       // TODO: Add a comment describing the purpose of the following statements
       expect(child.name).toEqual("Sarah");
