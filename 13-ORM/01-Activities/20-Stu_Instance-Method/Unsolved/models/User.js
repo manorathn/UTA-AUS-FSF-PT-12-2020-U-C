@@ -5,7 +5,15 @@ const sequelize = require('../config/connection');
 class User extends Model {
   checkPassword(userPassword) {
     // TODO: Complete the instance method
-  }
+    bcrypt.compare(userPassword, hash, (err, res) => {
+      if (err) {
+        console.error(err)
+        return
+      }
+      console.log(res)
+      return "Password Verified!"
+    })
+  };
 }
 
 User.init(
