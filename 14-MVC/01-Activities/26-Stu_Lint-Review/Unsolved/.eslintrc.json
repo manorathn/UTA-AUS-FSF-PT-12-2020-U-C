@@ -4,11 +4,16 @@
     "browser": true,
     "commonjs": true,
     "node": true,
-    "es6": true
+    "es6": true,
     // TODO: Add option to support ** operators
+    // "allowSamePrecedence": true,
   },
   "rules": {
     // TODO: Add rule to disallow setting variables to undefined
+    // "no-mixed-operators": "error",
+    // "group": [
+    //   "**"
+    // ],
     "no-duplicate-case": "error",
     "no-empty": "error",
     "no-extra-semi": "error",
@@ -28,9 +33,18 @@
     "no-use-before-define": "error",
     "no-redeclare": "error",
     "brace-style": "error",
-    "indent": ["error", 2],
-    "quotes": ["error", "single"],
-    "semi": ["error", "always"],
+    "indent": [
+      "error",
+      2
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
     "radix": "off"
   }
 }
