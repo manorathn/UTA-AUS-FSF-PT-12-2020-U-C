@@ -38,27 +38,67 @@ app.post("/submit", ({ body }, res) => {
   // we have to do it here, because the ajax post will convert it
   // to a string instead of a boolean
   book.read = false;
+
+  db.book.save(book, (error, saved) => {
+    if (error) {
+      console.log(error);
+    }
+    else {
+      res.send(saved);
+    }
+  });
 });
 
 // Find all books marked as read
-app.get("/read", (req, res) => {});
+app.get("/read", (req, res) => {
+  db.book.find({ "read": true }, (error, found) => {
+    if (error) {
+      console.log(error);
+    }
+    else {
+      res.json(found);
+    }
+  });
+});
 
 // Find all books marked as unread
-app.get("/unread", (req, res) => {});
+app.get("/unread", (req, res) => {
+  db.book.find({ "read": false }, (error, found) => {
+    if (error) {
+      console.log(error);
+    }
+    else {
+      res.json(found);
+    }
+  });
 
-// Mark a book as having been read
-app.put("/markread/:id", (req, res) => {
-  // Remember: when searching by an id, the id needs to be passed in
-  // as (mongojs.ObjectId(IdYouWantToFind))
-});
+  // Mark a book as having been read
+  app.put("/markread/:id", ({ params }, res) => {
+    // Remember: when searching by an id, the id needs to be passed in
+    // as (mongojs.ObjectId(IdYouWantToFind))
+    db.book.update({
+      "_id": mongojs.ObjectID(params.id)
+    }, {
+      $set: {
+        "read": true
+      }
+    })
+  });
 
-// Mark a book as having been not read
-app.put("/markunread/:id", (req, res) => {
-  // Remember: when searching by an id, the id needs to be passed in
-  // as (mongojs.ObjectId(IdYouWantToFind))
-});
+  // Mark a book as having been not read
+  app.put("/markunread/:id", ({ params }, res) => {
+    // Remember: when searching by an id, the id needs to be passed in
+    // as (mongojs.ObjectId(IdYouWantToFind))
+    db.book.update({
+      "_id": mongojs.ObjectID(params.id)
+    }, {
+      $set: {
+        "read": false
+      }
+    })
+  });
 
-// Listen on port 3000
-app.listen(3000, () => {
-  console.log("App running on port 3000!");
-});
+  // Listen on port 3000
+  app.listen(3000, () => {
+    console.log("App running on port 3000!");
+  });
