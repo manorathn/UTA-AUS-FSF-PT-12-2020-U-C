@@ -1,20 +1,22 @@
+import { createElement } from "./domMethods";
 // Setting up dummy topics data
-let topicData = [{
-  id: 1,
-  name: "Politics"
-},
-{
-  id: 2,
-  name: "Environment"
-},
-{
-  id: 3,
-  name: "Sports"
-},
-{
-  id: 4,
-  name: "Entertainment"
-}
+let topicData = [
+  {
+    id: 1,
+    name: "Politics"
+  },
+  {
+    id: 2,
+    name: "Environment"
+  },
+  {
+    id: 3,
+    name: "Sports"
+  },
+  {
+    id: 4,
+    name: "Entertainment"
+  }
 ];
 
 let lastId = 4;
@@ -46,9 +48,11 @@ function createTopics(topicData) {
 // Return markup for a topic object
 function createTopic({ name, id }) {
   return createElement(
-    "div", { class: "topic" },
+    "div",
+    { class: "topic" },
     createElement(
-      "button", { "aria-label": "Close", "data-id": id, onClick: handleTopicDelete },
+      "button",
+      { "aria-label": "Close", "data-id": id, onClick: handleTopicDelete },
       "×"
     ),
     createElement("a", { href: `topic.html?query=${name}` }, name)
@@ -74,56 +78,15 @@ function handleTopicAdd(event) {
     return;
   }
 
-  topicData = [
-    ...topicData,
-    { id: ++lastId, name: value }
-  ];
+  topicData = [...topicData, { id: ++lastId, name: value }];
 
   input.value = "";
 
   renderTopics();
 }
 
-// Helper function for creating elements
-function createElement(type, attributes, ...children) {
-  const element = document.createElement(type);
-
-  if (typeof attributes === "object") {
-    for (const key in attributes) {
-      if (key.startsWith("on")) {
-        const event = key.substring(2).toLowerCase();
-        const handler = attributes[key];
-
-        element.addEventListener(event, handler);
-      } else {
-        element.setAttribute(key, attributes[key]);
-      }
-    }
-  }
-
-  children.forEach(child => {
-    if (typeof child === "boolean" || child === null || child === undefined) {
-      return;
-    }
-
-    let node;
-
-    if (child instanceof HTMLElement) {
-      node = child;
-    } else {
-      node = document.createTextNode(child);
-    }
-
-    element.appendChild(node);
-  });
-
-  return element;
-}
-
 // Renders topics on page load
 renderTopics();
 
 // Handle new topic submissions
-document
-  .querySelector("#submit-topic")
-  .addEventListener("click", handleTopicAdd);
+document.querySelector("#submit-topic").addEventListener("click", handleTopicAdd);
